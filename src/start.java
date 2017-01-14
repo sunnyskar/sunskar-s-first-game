@@ -1,23 +1,45 @@
 import java.util.Scanner;
 
-public class start {
-
+public class start
+{
 	private static Scanner input;
 
-	public static void main(String[] args) {
+	// There isn't really any reason to keep all these in separate Strings unless we plan on using them more than once.
+    // I'm keeping all of these for the sake of easier-to-read code.
+	private static String playerName;
+	private static String nameCorrect;
+
+
+	/**
+     * This represents the number of questions in the quiz.
+     *
+     * If you plan to make all questions multiple choice, we can just make the whole quiz into a loop.
+     * An iterator will cycle through this loop [QUESTIONS] times.
+     * Then there would have to be an array for questions' text, and another for possible answer choices.
+     * We can access a specific question's text given the question # using array indices. Don't forget that they start at 0.
+     * For answer choices, we'd have a 2-dimensional array.
+    */
+   
+
+	// An array to keep the users' answers to questions.
+
+
+	public static void main(String[] args)
+    {
 		int points = 0;
 		// Introduction to game
 		input = new Scanner(System.in);
-		System.out.println("Hello! Welcome to my game. What is your name?");
-		String playername = input.nextLine();
 
-		// "checking" if name is right
-		String namecorrect;
-		do {
-			System.out.println("You entered: " + playername + ". Is this correct? If not too bad.");
-			System.out.println("Type yes or no");
-			namecorrect = input.nextLine();
-		} while (!namecorrect.equalsIgnoreCase("yes"));
+		System.out.println("Hello! Welcome to my game.");
+
+//"checking" if name is right
+do {
+    System.out.println("What is your name?");
+    playerName = input.nextLine();
+    // I got rid of the "println" and just made it a "print". Because it looks cooler when you take input on the same line if it's just a Y/n
+	System.out.print("You entered: " + playerName + ". Is this correct? (yes/no) ");
+    nameCorrect = input.nextLine();
+} while (!nameCorrect.equalsIgnoreCase("yes"));
 		// introducing controls
 		String startgame;
 		do {
@@ -166,4 +188,3 @@ public class start {
 	
 	}
 }
-
