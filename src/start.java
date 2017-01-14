@@ -15,6 +15,7 @@ public class start {
 		String namecorrect;
 		do {
 			System.out.println("You entered: " + playername + ". Is this correct? If not too bad.");
+			System.out.println("Type yes or no");
 			namecorrect = input.nextLine();
 		} while (!namecorrect.equalsIgnoreCase("yes"));
 		// introducing controls
@@ -140,5 +141,29 @@ public class start {
 		
 		
 		System.out.println("Your points are: " + points + " out of 5");
+		switch(points){
+		case 5:
+			System.out.println("Your name must be Brendan.");
+			break;
+		case 4:
+			System.out.println("Hey, that's pretty good.");
+			break;
+		case 3: 
+			System.out.println("You are average :(");
+			break;
+		case 2: 
+			System.out.println("What pokemon games have you played other than pokemon go.");
+			break;
+		case 1: 
+			System.out.println(" wow (said sarcastically)");
+			break;
+		case 0:
+			System.out.println("DO YOU EVEN POKEMON, BRO");
+			break;
+		default:
+			System.out.println("poop");
+		}
+	
 	}
 }
+
